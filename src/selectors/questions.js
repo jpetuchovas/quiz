@@ -4,10 +4,7 @@ const getQuestionsState = state => state.questions;
 
 const getQuestions = state => getQuestionsState(state).questions;
 
-export const getQuestionCount = createSelector(
-  getQuestions,
-  questions => questions.length
-);
+export const getQuestionCount = createSelector(getQuestions, questions => questions.length);
 
 export const checkIfQuestionsAreBeingFetched = createSelector(
   getQuestionsState,

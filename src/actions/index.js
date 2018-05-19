@@ -29,8 +29,7 @@ export const fetchAnswerSuccess = (correctAnswerIndex, selectedAnswerIndex) => (
 });
 export const fetchAnswerFailure = () => ({ type: FETCH_ANSWERS_FAILURE });
 export const fetchAnswer = (questionIndex, selectedAnswerIndex) => (dispatch, getState) => {
-  const answers = getState().answers;
-  if (selectedAnswerIndex !== null && !answers.isFetching && answers.correctAnswerIndex === null ) {
+  if (!getState().answers.isFetching) {
     dispatch(fetchAnswerLoading());
     setTimeout(() =>
       dispatch(fetchAnswerSuccess(questions[questionIndex].answerIndex, selectedAnswerIndex))
