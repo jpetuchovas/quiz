@@ -1,4 +1,4 @@
-const questions = [
+const data = [
   {
     question: 'question1',
     choices: ['aaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbbbbbbb', 'cccccccccccccccccc'],
@@ -16,4 +16,6 @@ const questions = [
   },
 ];
 
-export default questions;
+module.exports = {
+  questions: data,
+};

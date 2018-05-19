@@ -1,5 +1,4 @@
 import {
-  FETCH_QUESTIONS_FAILURE,
   FETCH_QUESTIONS_SUCCESS,
   FETCH_QUESTIONS_LOADING,
   SWITCH_TO_NEXT_QUESTION,
@@ -25,13 +24,6 @@ export default (state = initialState, action) => {
         questions: action.questions,
         isFetching: false,
         isFetchSuccessful: true,
-      };
-    case FETCH_QUESTIONS_FAILURE:
-      return {
-        ...state,
-        questions: [],
-        isFetching: false,
-        isFetchSuccessful: false,
       };
     case SWITCH_TO_NEXT_QUESTION:
       return {
