@@ -11,7 +11,7 @@ const initialState = {
   isFetching: true,
 };
 
-export default (state = initialState, action) => {
+const questions = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_QUESTIONS_LOADING:
       return {
@@ -38,3 +38,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default questions;
