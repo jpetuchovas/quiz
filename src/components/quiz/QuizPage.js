@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 
@@ -15,7 +15,7 @@ class QuizPage extends Component {
 
   render() {
     return (
-      <div className="quiz-container">
+      <Fragment>
         {this.props.isFetchingQuestions ? (
           <CircularProgress />
         ) : (
@@ -24,7 +24,7 @@ class QuizPage extends Component {
             <Score />
           </div>
         )}
-      </div>
+      </Fragment>
     );
   }
 }

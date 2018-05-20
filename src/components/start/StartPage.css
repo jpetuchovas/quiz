@@ -1,0 +1,33 @@
+.start-page-container {
+  width: 350px;
+}
+
+.start-page {
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.start-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.school-icon {
+  font-size: 12em !important;
+  color: #4054b2 !important;
+}
+
+.start-text {
+  margin: 20px 0;
+  font-size: 20px;
+}

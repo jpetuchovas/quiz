@@ -17,11 +17,7 @@ const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick
       <b>{Math.round(correctlyAnsweredQuestionsCount / questionCount * 100)}%</b>.
     </div>
 
-    <Button
-      variant="raised"
-      color="primary"
-      onClick={onRestartClick}
-    >
+    <Button variant="raised" color="primary" onClick={onRestartClick}>
       Restart quiz
     </Button>
   </Paper>

@@ -13,7 +13,7 @@ const ResultContainer = ({ isQuizFinished }) => (
         <Result />
       </div>
     ) : (
-      <Redirect to="/" />
+      <Redirect to="/quiz" />
     )}
   </Fragment>
 );
