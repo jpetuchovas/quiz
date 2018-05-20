@@ -1,7 +1,7 @@
 import {
   FETCH_QUESTIONS_SUCCESS,
   FETCH_QUESTIONS_LOADING,
-  SWITCH_TO_NEXT_QUESTION,
+  SWITCH_TO_NEXT_QUESTION, RESTART_QUIZ,
 } from '../actions';
 
 const initialState = {
@@ -31,6 +31,8 @@ export default (state = initialState, action) => {
             ? state.currentQuestionIndex + 1
             : state.questions.length - 1,
       };
+    case RESTART_QUIZ:
+      return initialState;
     default:
       return state;
   }

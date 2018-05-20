@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Paper } from '@material-ui/core';
+import { Button, Paper } from '@material-ui/core';
 
 import './Result.css';
 import { getCorrectlyAnsweredQuestionsCount } from '../../selectors/answers';
 import { getQuestionCount } from '../../selectors/questions';
+import { restartQuiz } from '../../actions';
 
-const Result = ({ correctlyAnsweredQuestionsCount, questionCount }) => (
+const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick }) => (
   <Paper className="result">
     <div className="congratulation">Congratulations! You've completed the quiz.</div>
     <hr />
@@ -15,6 +16,14 @@ const Result = ({ correctlyAnsweredQuestionsCount, questionCount }) => (
       correctly with a final grade of{' '}
       <b>{Math.round(correctlyAnsweredQuestionsCount / questionCount * 100)}%</b>.
     </div>
+
+    <Button
+      variant="raised"
+      color="primary"
+      onClick={onRestartClick}
+    >
+      Restart quiz
+    </Button>
   </Paper>
 );
 
@@ -23,4 +32,8 @@ const mapStateToProps = state => ({
   questionCount: getQuestionCount(state),
 });
 
-export default connect(mapStateToProps)(Result);
+const mapDispatchToProps = dispatch => ({
+  onRestartClick: () => dispatch(restartQuiz()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Result);

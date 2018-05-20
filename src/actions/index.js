@@ -6,6 +6,8 @@ export const FETCH_ANSWER_SUCCESS = 'FETCH_ANSWER_SUCCESS';
 
 export const SWITCH_TO_NEXT_QUESTION = 'SWITCH_TO_NEXT_QUESTION';
 
+export const RESTART_QUIZ = 'RESTART_QUIZ';
+
 export const fetchQuestionsLoading = () => ({ type: FETCH_QUESTIONS_LOADING });
 export const fetchQuestionsSuccess = questions => ({
   type: FETCH_QUESTIONS_SUCCESS,
@@ -34,3 +36,5 @@ export const fetchAnswer = (questionIndex, selectedAnswerIndex) => (dispatch, ge
 };
 
 export const switchToNextQuestion = () => ({ type: SWITCH_TO_NEXT_QUESTION });
+
+export const restartQuiz = () => ({ type: RESTART_QUIZ });

@@ -1,4 +1,9 @@
-import { FETCH_ANSWER_LOADING, FETCH_ANSWER_SUCCESS, SWITCH_TO_NEXT_QUESTION } from '../actions';
+import {
+  FETCH_ANSWER_LOADING,
+  FETCH_ANSWER_SUCCESS,
+  RESTART_QUIZ,
+  SWITCH_TO_NEXT_QUESTION,
+} from '../actions';
 
 const initialState = {
   correctAnswerIndex: null,
@@ -28,6 +33,8 @@ export default (state = initialState, action) => {
         ...state,
         correctAnswerIndex: null,
       };
+    case RESTART_QUIZ:
+      return initialState;
     default:
       return state;
   }
