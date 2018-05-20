@@ -1,4 +1,4 @@
-import answers from './answers';
+import answersReducer from './answers';
 import {
   FETCH_ANSWER_LOADING,
   FETCH_ANSWER_SUCCESS,
@@ -14,7 +14,7 @@ describe('answers reducer', () => {
       isFetching: false,
     };
 
-    expect(answers(undefined, {})).toEqual(initialState);
+    expect(answersReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle FETCH_ANSWER_LOADING', () => {
@@ -26,7 +26,7 @@ describe('answers reducer', () => {
       isFetching: true,
     };
 
-    expect(answers(undefined, action)).toEqual(expectedState);
+    expect(answersReducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle FETCH_ANSWER_SUCCESS when selected answer is correct', () => {
@@ -42,7 +42,7 @@ describe('answers reducer', () => {
       isFetching: false,
     };
 
-    expect(answers(undefined, action)).toEqual(expectedState);
+    expect(answersReducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle FETCH_ANSWER_SUCCESS when selected answer is not correct', () => {
@@ -58,7 +58,7 @@ describe('answers reducer', () => {
       isFetching: false,
     };
 
-    expect(answers(undefined, action)).toEqual(expectedState);
+    expect(answersReducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle SWITCH_TO_NEXT_QUESTION', () => {
@@ -75,7 +75,7 @@ describe('answers reducer', () => {
       isFetching: false,
     };
 
-    expect(answers(startingState, action)).toEqual(expectedState);
+    expect(answersReducer(startingState, action)).toEqual(expectedState);
   });
 
   it('should handle RESTART_QUIZ', () => {
@@ -92,6 +92,6 @@ describe('answers reducer', () => {
       isFetching: false,
     };
 
-    expect(answers(startingState, action)).toEqual(expectedState);
+    expect(answersReducer(startingState, action)).toEqual(expectedState);
   });
 });

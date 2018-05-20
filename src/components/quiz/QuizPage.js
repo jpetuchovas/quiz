@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 
 import './QuizPage.css';
-import { checkIfQuestionsAreBeingFetched } from '../../selectors/questions';
+import { checkIfQuestionsAreAvailable } from '../../selectors/questions';
 import { fetchQuestions } from '../../actions';
 import QuestionCard from '../questions/QuestionCard';
 import Score from '../score/Score';
@@ -16,13 +16,13 @@ class QuizPage extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.isFetchingQuestions ? (
-          <CircularProgress />
-        ) : (
+        {this.props.areQuestionsAvailable ? (
           <div className="quiz">
             <QuestionCard />
             <Score />
           </div>
+        ) : (
+          <CircularProgress />
         )}
       </Fragment>
     );
@@ -30,7 +30,7 @@ class QuizPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  isFetchingQuestions: checkIfQuestionsAreBeingFetched(state),
+  areQuestionsAvailable: checkIfQuestionsAreAvailable(state),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -6,9 +6,10 @@ const getQuestions = state => getQuestionsState(state).questions;
 
 export const getQuestionCount = createSelector(getQuestions, questions => questions.length);
 
-export const checkIfQuestionsAreBeingFetched = createSelector(
+export const checkIfQuestionsAreAvailable = createSelector(
   getQuestionsState,
-  questionsState => questionsState.isFetching
+  getQuestionCount,
+  (questionsState, questionCount) => !questionsState.isFetching && questionCount !== 0
 );
 
 export const getCurrentQuestionIndex = createSelector(

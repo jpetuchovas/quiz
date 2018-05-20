@@ -8,7 +8,7 @@ import {
 const initialState = {
   questions: [],
   currentQuestionIndex: 0,
-  isFetching: true,
+  isFetching: false,
 };
 
 const questions = (state = initialState, action) => {
