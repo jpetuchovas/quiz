@@ -6,16 +6,18 @@ import {
   SWITCH_TO_NEXT_QUESTION,
 } from '../actions';
 
-const questions = [
-  {
-    question: 'Which one is a letter?',
-    choices: ['a', '1', ')'],
-  },
-  {
-    question: 'Which one is a number?',
-    choices: ['1', '^', 'u'],
-  },
-];
+const getQuestions = () => {
+  return [
+    {
+      question: 'Which one is a letter?',
+      choices: ['a', '1', ')'],
+    },
+    {
+      question: 'Which one is a number?',
+      choices: ['1', '^', 'u'],
+    },
+  ];
+};
 
 describe('questions reducer', () => {
   it('should return the initial state', () => {
@@ -41,6 +43,7 @@ describe('questions reducer', () => {
   });
 
   it('should handle FETCH_QUESTIONS_SUCCESS', () => {
+    const questions = getQuestions();
     const action = {
       type: FETCH_QUESTIONS_SUCCESS,
       questions,
@@ -55,7 +58,8 @@ describe('questions reducer', () => {
     expect(questionsReducer(undefined, action)).toEqual(expectedState);
   });
 
-  it('should handle SWITCH_TO_NEXT_QUESTION when there are questions left', () => {
+  it('should correctly handle SWITCH_TO_NEXT_QUESTION when there are questions left', () => {
+    const questions = getQuestions();
     const startingState = {
       questions,
       currentQuestionIndex: 0,
@@ -72,7 +76,8 @@ describe('questions reducer', () => {
     expect(questionsReducer(startingState, action)).toEqual(expectedState);
   });
 
-  it('should handle SWITCH_TO_NEXT_QUESTION when there are no questions left', () => {
+  it('should correctly handle SWITCH_TO_NEXT_QUESTION when there are no questions left', () => {
+    const questions = getQuestions();
     const startingState = {
       questions,
       currentQuestionIndex: 1,
@@ -84,6 +89,7 @@ describe('questions reducer', () => {
   });
 
   it('should handle RESTART_QUIZ', () => {
+    const questions = getQuestions();
     const startingState = {
       questions,
       currentQuestionIndex: 2,

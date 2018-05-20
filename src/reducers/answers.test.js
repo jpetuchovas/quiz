@@ -29,7 +29,7 @@ describe('answers reducer', () => {
     expect(answersReducer(undefined, action)).toEqual(expectedState);
   });
 
-  it('should handle FETCH_ANSWER_SUCCESS when selected answer is correct', () => {
+  it('should correctly handle FETCH_ANSWER_SUCCESS when selected answer is correct', () => {
     const action = {
       type: FETCH_ANSWER_SUCCESS,
       correctAnswerIndex: 1,
@@ -45,7 +45,7 @@ describe('answers reducer', () => {
     expect(answersReducer(undefined, action)).toEqual(expectedState);
   });
 
-  it('should handle FETCH_ANSWER_SUCCESS when selected answer is not correct', () => {
+  it('should correctly handle FETCH_ANSWER_SUCCESS when selected answer is not correct', () => {
     const action = {
       type: FETCH_ANSWER_SUCCESS,
       correctAnswerIndex: 1,

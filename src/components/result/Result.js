@@ -8,7 +8,7 @@ import { getQuestionCount } from '../../selectors/questions';
 import { restartQuiz } from '../../actions';
 import { getPercentage } from '../../utils/percentage';
 
-const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick }) => (
+export const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick }) => (
   <Paper className="result">
     <div className="congratulation">Congratulations! You've completed the quiz.</div>
     <hr />
@@ -18,7 +18,7 @@ const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick
       <b>{Math.round(getPercentage(correctlyAnsweredQuestionsCount, questionCount))}%</b>.
     </div>
 
-    <Button variant="raised" color="primary" onClick={onRestartClick}>
+    <Button className="restart-button" variant="raised" color="primary" onClick={onRestartClick}>
       Restart quiz
     </Button>
   </Paper>

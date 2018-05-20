@@ -1,7 +1,5 @@
 # Developer quiz
 
-## Getting started
-
 * `npm install` - installs the required packages.
 * `npm run build` - builds the app for production.
 * `npm run server` - runs the backend server at port 3008.
