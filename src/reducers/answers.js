@@ -34,7 +34,7 @@ const answers = (state = initialState, action) => {
         correctAnswerIndex: null,
       };
     case RESTART_QUIZ:
-      return initialState;
+      return { ...initialState };
     default:
       return state;
   }

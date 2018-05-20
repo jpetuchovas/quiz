@@ -33,7 +33,7 @@ const questions = (state = initialState, action) => {
             : state.questions.length - 1,
       };
     case RESTART_QUIZ:
-      return initialState;
+      return { ...initialState };
     default:
       return state;
   }
