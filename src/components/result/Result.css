@@ -1,0 +1,16 @@
+.result {
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.congratulation {
+  color: #4054b2;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.final-grade {
+  margin: 20px 0 0 0;
+  font-size: 20px;
+}

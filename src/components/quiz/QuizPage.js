@@ -8,7 +8,7 @@ import { fetchQuestions } from '../../actions';
 import QuestionCard from '../questions/QuestionCard';
 import Score from '../score/Score';
 
-class App extends Component {
+class QuizPage extends Component {
   componentDidMount() {
     this.props.fetchQuestions();
   }
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
   fetchQuestions: () => dispatch(fetchQuestions()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

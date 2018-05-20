@@ -13,7 +13,7 @@ export const fetchQuestionsSuccess = questions => ({
 });
 export const fetchQuestions = () => dispatch => {
   dispatch(fetchQuestionsLoading());
-  return fetch('http://localhost:3008/api/questions')
+  return fetch('/api/questions')
     .then(response => response.json())
     .then(questions => dispatch(fetchQuestionsSuccess(questions)));
 };
@@ -27,7 +27,7 @@ export const fetchAnswerSuccess = (correctAnswerIndex, selectedAnswerIndex) => (
 export const fetchAnswer = (questionIndex, selectedAnswerIndex) => (dispatch, getState) => {
   if (!getState().answers.isFetching) {
     dispatch(fetchAnswerLoading());
-    return fetch(`http://localhost:3008/api/questions/${questionIndex}/answer`)
+    return fetch(`/api/questions/${questionIndex}/answer`)
       .then(response => response.json())
       .then(data => dispatch(fetchAnswerSuccess(data.answer, selectedAnswerIndex)));
   }

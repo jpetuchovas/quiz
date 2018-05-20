@@ -1,13 +1,11 @@
 const express = require('express');
+const path = require('path');
 const data = require('./data');
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+const port = 3008;
+
 app.use(express.static('build'));
 
 const getQuestionsWithoutAnswers = questions =>
@@ -27,6 +25,8 @@ app.get('/api/questions/:questionIndex/answer', (request, response) => {
   response.json({ answer: getAnswer(data.questions, questionIndex) });
 });
 
-const port = 3008;
+app.get('*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Button, LinearProgress, Paper } from '@material-ui/core';
 
 import './QuestionCard.css';
@@ -60,9 +61,11 @@ class QuestionCard extends Component {
             </Button>
 
             {this.props.isQuizFinished ? (
-              <Button variant="raised" color="primary">
-                Finish
-              </Button>
+              <Link to="/result" className="finish-button-link">
+                <Button variant="raised" color="primary">
+                  Finish
+                </Button>
+              </Link>
             ) : (
               <Button
                 variant="raised"
