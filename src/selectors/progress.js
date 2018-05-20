@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
+
 import { checkIfCorrectAnswerIsAvailable } from './answers';
 import { getCurrentQuestionIndex, getQuestionCount } from './questions';
+import { getPercentage } from '../utils/percentage';
 
 export const checkIfQuizIsFinished = createSelector(
   checkIfCorrectAnswerIsAvailable,
@@ -9,8 +11,6 @@ export const checkIfQuizIsFinished = createSelector(
   (isCorrectAnswerAvailable, currentQuestionIndex, questionCount) =>
     isCorrectAnswerAvailable && currentQuestionIndex === questionCount - 1
 );
-
-const getPercentage = (part, total) => part / total * 100;
 
 export const getAnsweredQuestionsPercentage = createSelector(
   checkIfCorrectAnswerIsAvailable,

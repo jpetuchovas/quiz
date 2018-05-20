@@ -3,7 +3,7 @@ import {
   FETCH_QUESTIONS_LOADING,
   FETCH_QUESTIONS_SUCCESS,
   RESTART_QUIZ,
-  SWITCH_TO_NEXT_QUESTION
+  SWITCH_TO_NEXT_QUESTION,
 } from '../actions';
 
 const questions = [

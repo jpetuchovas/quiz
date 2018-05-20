@@ -6,6 +6,7 @@ import './Result.css';
 import { getCorrectlyAnsweredQuestionsCount } from '../../selectors/answers';
 import { getQuestionCount } from '../../selectors/questions';
 import { restartQuiz } from '../../actions';
+import { getPercentage } from '../../utils/percentage';
 
 const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick }) => (
   <Paper className="result">
@@ -14,7 +15,7 @@ const Result = ({ correctlyAnsweredQuestionsCount, questionCount, onRestartClick
     <div className="final-grade">
       Out of {questionCount} quiz questions, you answered {correctlyAnsweredQuestionsCount}{' '}
       correctly with a final grade of{' '}
-      <b>{Math.round(correctlyAnsweredQuestionsCount / questionCount * 100)}%</b>.
+      <b>{Math.round(getPercentage(correctlyAnsweredQuestionsCount, questionCount))}%</b>.
     </div>
 
     <Button variant="raised" color="primary" onClick={onRestartClick}>
