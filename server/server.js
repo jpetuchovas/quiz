@@ -27,4 +27,6 @@ app.get('/api/questions/:questionIndex/answer', (request, response) => {
   response.json({ answer: getAnswer(data.questions, questionIndex) });
 });
 
-app.listen(3008, () => console.log('Server running on port 3008!'));
+const port = 3008;
+
+app.listen(port, () => console.log(`Server running on port ${port}!`));

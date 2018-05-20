@@ -4,7 +4,6 @@ const initialState = {
   correctAnswerIndex: null,
   correctlyAnsweredQuestionsCount: 0,
   isFetching: false,
-  isFetchSuccessful: true,
 };
 
 export default (state = initialState, action) => {

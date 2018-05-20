@@ -8,7 +8,6 @@ const initialState = {
   questions: [],
   currentQuestionIndex: 0,
   isFetching: true,
-  isFetchSuccessful: true,
 };
 
 export default (state = initialState, action) => {
@@ -23,7 +22,6 @@ export default (state = initialState, action) => {
         ...state,
         questions: action.questions,
         isFetching: false,
-        isFetchSuccessful: true,
       };
     case SWITCH_TO_NEXT_QUESTION:
       return {
