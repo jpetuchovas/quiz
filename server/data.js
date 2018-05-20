@@ -1,4 +1,4 @@
-const data = [
+const questions = [
   {
     question: 'What method is used to change state in React?',
     choices: ['setState', 'changeState', 'replaceState'],
@@ -30,5 +30,5 @@ const data = [
 ];
 
 module.exports = {
-  questions: data,
+  questions,
 };
